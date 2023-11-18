@@ -1,13 +1,28 @@
 'use client'
 import { useState } from 'react';
 import Modal from 'react-modal';
+import {useData} from '@/app/(context)/DataContext'
 
 const Modals = ({modalIsOpen,setIsOpen}) => {
-    const [text, setText]= useState('')
-    const handleChange=(e)=>{
-        setText(e.target.value)
-        console.log(text)
-    }
+
+  const {setTweet}= useData()
+
+  const [text, setText]= useState('')
+  const handleChange=(e)=>{
+      setText(e.target.value)
+  }
+
+  const handleClick=()=>{
+      setTweet(prev=>{
+        if(text.length!==0){
+          return [...prev,text]
+        }
+        return prev
+      })
+      setIsOpen(false);
+      setText('')
+  }
+
     const customStyles = {
         content: {
           top: '50%',
@@ -16,7 +31,8 @@ const Modals = ({modalIsOpen,setIsOpen}) => {
           bottom: 'auto',
           marginRight: '-50%',
           transform: 'translate(-50%, -50%)',
-          width:'50%'
+          width:'50%',
+          height:'200px'
         },
       };
     let subtitle;
@@ -36,10 +52,10 @@ const Modals = ({modalIsOpen,setIsOpen}) => {
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <button onClick={closeModal}>close</button>
-        <form>
-          <textarea name='text' value={text} onChange={handleChange} className='w-full border-[1px] '></textarea>
-        </form>
+     
+          <textarea name='text' value={text} onChange={handleChange} className='w-full  h-[150px] '></textarea>
+          <div className=' flex justify-end'><button onClick={handleClick} >POST</button></div>
+  
       </Modal>
   )
 }

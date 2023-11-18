@@ -10,6 +10,9 @@ export default function Home() {
   )
 }
 
+//today
+//navlink 
+
 //perfromance issue
 //check if there is something you can do with light house before starting
 //try to use erformant strategies while building this

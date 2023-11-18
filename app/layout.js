@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Nav from './(consistentPages)/nav/Nav'
 import Trends from './(consistentPages)/trends/Trends'
+import {DataGet} from '@/app/(context)/DataContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,9 +15,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className=' flex w-screen'>
+        <DataGet>
         <Nav />
         {children}
         <Trends />
+        </DataGet>
         </body>
     </html>
   )

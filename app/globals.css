@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 
-
+/* svg path{
+    fill:green;
+} */
 @media screen and (max-width:768px){
     /* #img-div{
         width:10%
