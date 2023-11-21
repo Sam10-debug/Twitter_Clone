@@ -1,22 +1,4 @@
-'use client'
-import Modals from "@/app/(shared)/modal/Modal"
-import Container from '@/app/(container)/Container'
-import {useData} from '@/app/(context)/DataContext'
-import MobileHeader from '@/app/(container)/MobileHeader'
-
-export default function Home() {
-  // USE CALLBACK HOOK ON THE NAV COMPONENT
-  const {modalIsOpen, setIsOpen} = useData()
-  function openModal() {
-    setIsOpen(true);
-  }
-
-  return (
-    <main className="w-full md:w-3/5 md:p-24 p-4 mt-12 md:mt-0">
-      <MobileHeader />
-      <Container />
-      <div  onClick={openModal} className=' fixed bottom-10 right-2 md:hidden z-50'>
-      <svg width="65" height="64" viewBox="0 0 65 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="65" height="64" viewBox="0 0 65 64" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_d_4_3061)">
 <circle cx="32.4241" cy="31" r="28" fill="#4C9EEB"/>
 </g>
@@ -34,24 +16,3 @@ export default function Home() {
 </filter>
 </defs>
 </svg>
-
-      </div>
-      <Modals modalIsOpen={modalIsOpen} setIsOpen={setIsOpen} />
-    </main>
-  )
-}
-
-//today
-//navlink 
-
-//perfromance issue
-//check if there is something you can do with light house before starting
-//try to use erformant strategies while building this
-//use tailwind config well,
-//get all font sizes youll use, colors and all repeatable dimensions in the config
-
-//GENERAL PSEUDO CODE
-//FOR THE DESKTOP, THE NAV AND THE TRENDS SECTION WILL BE ON THE LAYOUT BY THE LEFT
-//FOR THE MOBILE, ITLL COME THROUGH AN HAMBURGER, SO ITLL BE IN TO THE LEFT OF -100% THEN COME IN ONCLOCIK OF THE HAMBURGER
-
-//FOR THE PORTFOLIO SET THE PRIORITY OF THE IMAGES TO BE LOADED FIRST

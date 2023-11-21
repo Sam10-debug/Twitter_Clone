@@ -6,8 +6,10 @@ const {Provider}= DataContext
 
 const DataGet=({children})=>{
     const [tweet,setTweet]=useState([])
+    const [modalIsOpen, setIsOpen] = useState(false);
+    const [navState, setNavState] = useState(false);
     return (
-        <Provider value={{tweet,setTweet}}>
+        <Provider value={{tweet,setTweet,modalIsOpen,setIsOpen,navState,setNavState}}>
             {children}
         </Provider>
     )

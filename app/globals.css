@@ -6,6 +6,28 @@
 /* svg path{
     fill:green;
 } */
+body{
+    overflow-x: hidden;
+}
+.active{
+	color: red;
+	border: 1px solid red;
+}
+.show{
+	transform: rotate(45deg);
+	position: relative;
+	top: 6px;
+	left: 1px;
+}
+.showw{
+	transform: rotate(-45deg);
+	position: relative;
+	bottom: 6px;
+}
+.remove{
+	display: none;
+}
+
 @media screen and (max-width:768px){
     /* #img-div{
         width:10%
@@ -13,4 +35,29 @@
     #tweet-div{
         width:90%;
     }
+    .showNav{
+        transform: translateX(100%);
+    }
+    header{
+        /* transform: translateX(-100%); */
+        position:fixed;
+        top:0;
+        left:0;
+        right:0;
+        background:whitesmoke;
+    }
+    
+    .hamburger{
+        display: flex;
+        flex-direction: column;
+        height: 15px;
+        justify-content: space-between;
+        left: 5px;
+        top: 15px;
+        position: fixed;
+        z-index: 999;
+        background:red;
+    }
 }
+
+

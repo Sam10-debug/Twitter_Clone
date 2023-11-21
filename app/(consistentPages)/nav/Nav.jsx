@@ -1,21 +1,25 @@
 'use client'
-import { useState } from 'react';
 import Modals from "@/app/(shared)/modal/Modal"
 import { NavData } from "@/app/(data)/Data"
 import NavIcon from "@/app/(shared)/nav/NavIcon"
+import {useData} from '@/app/(context)/DataContext'
 
 
 const Nav = () => {
-  const [modalIsOpen, setIsOpen] = useState(false);
+  const {navState}=useData()
+  
+  const {modalIsOpen, setIsOpen} = useData()
 
   function openModal() {
     setIsOpen(true);
   }
+
+ 
   
  const mapped= NavData.map(elem=>(<NavIcon key={elem.altText} title={elem.title} altText={elem.altText} source={elem.source} />))
  
   return (
-    <header className=" hidden md:block w-1/5 p-8">
+    <header className={ ` md:w-1/5 p-8 ${!navState?'showNav':''}`} >
         <nav className=" space-y-6">
             {mapped}
         </nav>

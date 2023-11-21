@@ -15,7 +15,7 @@ const TweetCard=({tweet})=>{
 
     return(
         <section className=' flex gap-2 my-4 w-full '>
-            <div id='img-div' className='w-[100px] h-[100px]'>
+            <div id='img-div' className='md:w-[100px] md:h-[100px]'>
                 <Image src='/images/Profile Pic.png' alt='profile picture' width={50} height={50} />
         </div>
         <section id='tweet-div' className=' space-y-2 w-full '>

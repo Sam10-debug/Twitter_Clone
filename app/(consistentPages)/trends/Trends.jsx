@@ -5,7 +5,7 @@ const Trends=()=>{
     const mapped=TrendingData.map(elem=>(<Trend key={elem.id} id={elem.id} name={elem.name} number={elem.number} />))
 
     return(
-        <section className='w-1/5 p-8 space-y-4'>
+        <section className='w-1/5 p-8 space-y-4 hidden md:block'>
             <input type='search' className=' w-[200px] h-[43px] p-2 bg-search border-none rounded-[80px]' placeholder='Search Twitter' />
             <section className=' bg-trend p-4 rounded-xl'>
                 <div className=' flex justify-between'>
